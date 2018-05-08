@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-airport-crud',
-  templateUrl: './airport-crud.component.html',
-  styleUrls: ['./airport-crud.component.css']
+  selector: 'app-airports-crud',
+  templateUrl: './airports-crud.component.html',
+  styleUrls: ['./airports-crud.component.css']
 })
 export class AirportsCRUDComponent implements OnInit {
 
