@@ -22,4 +22,14 @@ export class AirportsComponent implements OnInit {
         this.airportsService.getAirports()
                             .subscribe(airports => this.airports = airports);
     }
+
+    add(country: string, shortName: string, longName: string): void {
+        this.airportsService.addAirport({ country, shortName, longName } as Airport)
+                            .subscribe(airport => {this.airports.push(airport)});
+    }
+
+    delete(airport: Airport): void {
+        this.airports = this.airports.filter(a => a !== airport);
+        this.airportsService.deleteAirport(airport).subscribe();
+    }
 }
