@@ -1,3 +1,11 @@
-<p>
-  airports works!
-</p>
+<ul class="heroes">
+    <li *ngFor="let airport of airports">
+        <a routerLink="/{{airport.id}}">
+            <span>{{airport.id}}</span>
+            <span>{{airport.country}}</span>
+            <span>{{airport.shortName}}</span>
+            <span>{{airport.longName}}</span>
+        </a>
+        <!-- <button class="delete" title="delete hero" (click)="delete(hero)">x</button> -->
+    </li>
+</ul>

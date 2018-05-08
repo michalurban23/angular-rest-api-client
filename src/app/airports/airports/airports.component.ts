@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Airport } from "../airport"
+import { AirportsService } from "../airports.service"
+
 @Component({
   selector: 'app-airports',
   templateUrl: './airports.component.html',
@@ -7,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AirportsComponent implements OnInit {
 
-  constructor() { }
+    airports: Airport[];
 
-  ngOnInit() {
-  }
+    constructor(private airportsService: AirportsService) { }
 
+    ngOnInit() {
+        this.getAirports();
+    }
+
+    getAirports(): void {
+        this.airportsService.getAirports()
+                            .subscribe(airports => this.airports = airports);
+    }
 }
