@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AirportCRUDComponent } from '../airport-crud/airport-crud.component';
+import { AirportsCRUDComponent } from './airports-crud/airports-crud.component';
 
 @NgModule({
     imports: [
         CommonModule
     ],
-    declarations: [AirportCRUDComponent]
+    declarations: [AirportsCRUDComponent]
 })
 export class AirportsModule { }

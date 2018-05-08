@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './airport-crud.component.html',
   styleUrls: ['./airport-crud.component.css']
 })
-export class AirportCRUDComponent implements OnInit {
+export class AirportsCRUDComponent implements OnInit {
 
   constructor() { }
 
