@@ -1,1 +1,41 @@
 /* You can add global styles to this file, and also import other style files */
+
+.list-id {
+    background-color: #FF803E;
+    border-radius: 4px 0 0 4px;
+    padding: .5em;
+}
+
+.list-name {
+    background-color: #FFC44F;
+    border-radius: 0 4px 4px 0;
+    padding: .5em;
+}
+
+.list-item {
+    margin: .5em 0;
+}
+
+.list-name:hover {
+    background-color: #FF803E;
+}
+
+.list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.list a {
+    color: black;
+    text-decoration: none;
+    margin: 0;
+}
+
+.list li {
+    margin: 2em 0;
+}
+
+.list-details {
+    
+}
