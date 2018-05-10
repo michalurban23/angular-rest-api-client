@@ -1,5 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 .list-id {
     background-color: #FF803E;
     border-radius: 4px 0 0 4px;
@@ -10,14 +14,34 @@
     background-color: #FFC44F;
     border-radius: 0 4px 4px 0;
     padding: .5em;
+    transition: background-color .2s;    
 }
 
 .list-item {
     margin: .5em 0;
 }
 
-.list-name:hover {
+.list-item:hover {
+    border-radius: 4px;
     background-color: #FF803E;
+    padding: .5em .5em .5em 0;
+}
+
+.list-item:hover .list-name {
+    background-color: #FF803E;
+}
+
+.delete {
+    display: none;
+}
+
+.list-item:hover .delete {
+    display: inline;
+    margin-left: .5em;
+    background-color: #FFC44F;
+    border-radius: 4px;
+    padding: .3em;
+    cursor: pointer;
 }
 
 .list {
@@ -34,8 +58,4 @@
 
 .list li {
     margin: 2em 0;
-}
-
-.list-details {
-    
 }
