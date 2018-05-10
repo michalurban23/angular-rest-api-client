@@ -30,6 +30,7 @@ export class AirportsComponent implements OnInit {
 
     delete(airport: Airport): void {
         this.airports = this.airports.filter(a => a !== airport);
-        this.airportsService.deleteAirport(airport).subscribe();
+        this.airportsService.deleteAirport(airport)
+                            .subscribe();
     }
 }

@@ -1,11 +1,18 @@
-<ul class="heroes">
+<ul class="list ">
     <li *ngFor="let airport of airports">
-        <a routerLink="/airports/{{airport.id}}">
-            <span>ID: {{airport.id}}</span><br />
-        </a>
-            <span>Country: {{airport.country}}</span><br />
-            <span>Short Name: {{airport.shortName}}</span><br />
-            <span>Long Name: {{airport.longName}}</span><br />
+        <span class="list-item">
+            <a routerLink="/airports/{{airport.id}}">
+                <span class="list-id">{{airport.id}}</span>
+                <span class="list-name">{{airport.longName}}</span>
+            </a>
+            <span class="delete" (click)="delete(airport)">X</span>
+            <!-- <button (click)="delete(airport)">X</button> -->
+        </span>
+        
+        <div class="list-details">
+            <span>{{airport.country}}</span><br/>
+            <span>{{airport.shortName}}</span><br/>
+        </div>
         <!-- <button class="delete" title="delete hero" (click)="delete(hero)">x</button> -->
     </li>
 </ul>
