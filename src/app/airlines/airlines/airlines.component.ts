@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Airline } from '../airline';
 
-import { Airline } from "../airline"
-import { AirlinesService } from "../airlines.service"
+import { AirlinesService } from "../airlines.service";
 
 @Component({
   selector: 'app-airlines',
@@ -17,6 +16,7 @@ export class AirlinesComponent implements OnInit {
 
     ngOnInit() {
         this.getAirlines();
+        console.log(this.airlines);
     }
 
     getAirlines(): void {
