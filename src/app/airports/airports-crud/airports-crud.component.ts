@@ -32,7 +32,7 @@ export class AirportsCRUDComponent implements OnInit {
     save(): void {
         this.airportsService.updateAirport(this.airport)
                         .subscribe(() => this.goBack());
- }
+    }
 
     goBack(): void {
         this.location.back();

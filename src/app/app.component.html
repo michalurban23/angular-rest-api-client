@@ -1,6 +1,15 @@
-<h1>{{title}}</h1>
-<nav>
-    <a routerLink="/airports">Airports</a>
-    <a routerLink="/airlines">Airlines</a>
-</nav>
-<router-outlet></router-outlet>
+<header>Flight Connector API Client</header>
+<div class="topnav">
+    <app-nav-bar></app-nav-bar>
+</div>
+<div class="container">
+    <nav class="side">
+        <app-side-bar></app-side-bar>
+    </nav>
+    <nav class="main">
+        <router-outlet></router-outlet>
+    </nav>
+</div>
+<footer>
+    <app-footer></app-footer>
+</footer>
