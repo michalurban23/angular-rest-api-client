@@ -1,3 +1,9 @@
-<p>
-  airlines works!
-</p>
+<ul class="heroes">
+    <li *ngFor="let airline of airlines">
+        <a routerLink="/airlines/{{airline.id}}">
+            <span>ID: {{airline.id}}</span><br />
+        </a>
+            <span>CountryOfOrigin: {{airline.countryOfOrigin}}</span><br />
+            <span>Name: {{airline.name}}</span><br />
+    </li>
+</ul>
