@@ -1,4 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
 body {
     background-color: blanchedalmond;
+    background-size: 100%;
+    background-attachment: fixed;
+    overflow: auto;
+    position: relative;
+    min-height: 100%;
+    margin: 0;
 }
