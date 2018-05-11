@@ -1,9 +1,36 @@
-<ul>
-    <li *ngFor="let airline of airlines">
-        <a routerLink="/airlines/{{airline.id}}">
-            <span>ID: {{airline.id}}</span><br />
-        </a>
-            <span>CountryOfOrigin: {{airline.countryOfOrigin}}</span><br />
-            <span>Name: {{airline.name}}</span><br />
-    </li>
-</ul>
+<div *ngIf="new">
+    <h2>New airline</h2>
+    <div class="form-wrapper">
+        <div class="labels">
+            <p class="label">Name</p>
+            <p class="label">Country</p>
+        </div>
+        <div class="inputs">
+            <input #name><br>
+            <input #country>
+        </div>
+        <div class="buttons">
+            <button class="button" 
+                (click)="add(name.value, country.value)">+</button>
+        </div>
+    </div>
+</div>
+<div *ngIf="!new">
+    <h2>Airlines</h2>
+    <button class="button" (click)="setNewTrue()">+</button>
+    <ul class="list">
+        <li *ngFor="let airline of airlines">
+            <span class="list-item">
+                <a routerLink="/airlines/{{airline.id}}">
+                    <span class="list-id">{{airline.id}}</span>
+                    <span class="list-name">{{airline.name}}</span>
+                </a>
+                <span class="delete" (click)="delete(airline)">X</span>
+            </span>
+            
+            <div class="list-details">
+                <span>{{airline.countryOfOrigin}}</span><br/>
+            </div>
+        </li>
+    </ul>
+</div>

@@ -40,3 +40,8 @@ Thumbs.db
 
 # ENV
 environment.ts
+
+# mock files
+src/app/airlines/mock-airlines.ts
+src/app/airports/mock-airports.ts
+src/app/in-memory-data.service.ts

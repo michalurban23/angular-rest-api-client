@@ -11,6 +11,7 @@ import { AirlinesService } from "../airlines.service";
 export class AirlinesComponent implements OnInit {
 
     airlines: Airline[];
+    new: boolean = false;
 
     constructor(private airlinesService: AirlinesService) { }
 
@@ -25,11 +26,21 @@ export class AirlinesComponent implements OnInit {
 
     add(name: string, countryOfOrigin: string): void {
         this.airlinesService.addAirline({ name, countryOfOrigin } as Airline)
-                            .subscribe(airline => {this.airlines.push(airline)});
+                            .subscribe(airline => { if(!name) this.airlines.push(airline)});
+        this.new = false;
     }
 
     delete(airline: Airline): void {
         this.airlines = this.airlines.filter(a => a !== airline);
         this.airlinesService.deleteAirline(airline).subscribe();
+    }
+
+    setNewTrue(): void {
+      this.new = true;
+    }
+
+    setNewFalse(): void {
+        this.new = false;
+        this.getAirlines();
     }
 }

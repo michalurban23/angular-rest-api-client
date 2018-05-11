@@ -19,6 +19,7 @@ import { PageNotFoundComponent } from './error/page-not-found/page-not-found.com
         BrowserModule,
         FormsModule,
         HttpClientModule,
+        // HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { dataEncapsulation: false}),
         AirportsModule,
         AirlinesModule,
         HomeModule,

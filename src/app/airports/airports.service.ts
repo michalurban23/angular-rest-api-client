@@ -45,15 +45,15 @@ export class AirportsService {
                         );
     }
 
-    addAirport (Airport: Airport): Observable<Airport> {
-        return this.http.post<Airport>(this.airportsUrl, Airport, httpOptions)
+    addAirport (airport: Airport): Observable<Airport> {
+        return this.http.post<Airport>(this.airportsUrl, airport, httpOptions)
                         .pipe(
                             catchError(this.handleError<Airport>('addAirport'))
                         );
     }
 
-    deleteAirport (Airport: Airport | number): Observable<Airport> {
-        const id = typeof Airport === 'number' ? Airport : Airport.id;
+    deleteAirport (airport: Airport | number): Observable<Airport> {
+        const id = typeof airport === 'number' ? airport : airport.id;
         const url = `${this.airportsUrl}/${id}`;
         return this.http.delete<Airport>(url, httpOptions)
                         .pipe(

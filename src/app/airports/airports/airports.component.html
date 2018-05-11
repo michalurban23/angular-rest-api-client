@@ -1,18 +1,39 @@
-<ul class="list ">
-    <li *ngFor="let airport of airports">
-        <span class="list-item">
-            <a routerLink="/airports/{{airport.id}}">
-                <span class="list-id">{{airport.id}}</span>
-                <span class="list-name">{{airport.longName}}</span>
-            </a>
-            <span class="delete" (click)="delete(airport)">X</span>
-            <!-- <button (click)="delete(airport)">X</button> -->
-        </span>
-
-        <div class="list-details">
-            <span>{{airport.country}}</span><br/>
-            <span>{{airport.shortName}}</span><br/>
+<div *ngIf="new">
+    <h2>New airport</h2>
+    <div class="form-wrapper">
+        <div class="labels">
+            <p class="label">Name</p>
+            <p class="label">Short name</p>
+            <p class="label">Country</p>
         </div>
-        <!-- <button class="delete" title="delete hero" (click)="delete(hero)">x</button> -->
-    </li>
-</ul>
+        <div class="inputs">
+            <input #name><br>
+            <input #shortName><br>
+            <input #country>
+        </div>
+        <div class="buttons">
+            <button class="button" 
+                (click)="add(country.value, shortName.value, name.value)">+</button>
+        </div>
+    </div>
+</div>
+<div *ngIf="!new">
+    <h2>Airports</h2>
+    <button class="button" (click)="setNewTrue()">+</button>
+    <ul class="list">
+        <li *ngFor="let airport of airports">
+            <span class="list-item">
+                <a routerLink="/airports/{{airport.id}}">
+                    <span class="list-id">{{airport.id}}</span>
+                    <span class="list-name">{{airport.longName}}</span>
+                </a>
+                <span class="delete" (click)="delete(airport)">X</span>
+            </span>
+            
+            <div class="list-details">
+                <span>{{airport.country}}</span><br/>
+                <span>{{airport.shortName}}</span><br/>
+            </div>
+        </li>
+    </ul>
+</div>
