@@ -16,7 +16,6 @@ export class AirlinesComponent implements OnInit {
 
     ngOnInit() {
         this.getAirlines();
-        console.log(this.airlines);
     }
 
     getAirlines(): void {

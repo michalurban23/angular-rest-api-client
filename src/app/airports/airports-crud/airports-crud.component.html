@@ -1,3 +1,17 @@
-<p>
-  airport-crud works!
-</p>
+<div *ngIf="airport">
+  <h2>{{ airport.longName | uppercase }} Details</h2>
+  <div><span>id: </span>{{ airport.id }}</div>
+  <div>
+    <label>Full Name:
+      <input [(ngModel)]="airport.longName" placeholder="{{ airport.longName }}"/>
+    </label><br />
+    <label>Short Name:
+      <input [(ngModel)]="airport.shortName" placeholder="{{ airport.shortName }}"/>
+    </label><br />
+    <label>Country:
+      <input [(ngModel)]="airport.country" placeholder="{{ airport.country }}"/>
+  </label><br />
+  </div>
+</div>
+<button (click)="goBack()">go back</button>
+<button (click)="save()">save</button>

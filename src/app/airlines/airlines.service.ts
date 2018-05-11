@@ -22,7 +22,7 @@ export class AirlinesService {
 
     constructor(private http: HttpClient) { }
 
-    getAirlines (): Observable<Airline[]> {
+    getAirlines(): Observable<Airline[]> {
         return this.http.get<Airline[]>(this.airlinesUrl)
                         .pipe(
                             catchError(this.handleError('get', []))
@@ -37,21 +37,22 @@ export class AirlinesService {
                         );
     }
 
-    updateAirline (Airline: Airline): Observable<any> {
-        return this.http.put(this.airlinesUrl, Airline, httpOptions)
+    updateAirline(airline: Airline): Observable<any> {
+        const url = `${this.airlinesUrl}/${airline.id}`;
+        return this.http.put(url, airline, httpOptions)
                         .pipe(
                             catchError(this.handleError<any>('updateAirline'))
                         );
     }
 
-    addAirline (Airline: Airline): Observable<Airline> {
+    addAirline(Airline: Airline): Observable<Airline> {
         return this.http.post<Airline>(this.airlinesUrl, Airline, httpOptions)
                         .pipe(
                             catchError(this.handleError<Airline>('addAirline'))
                         );
     }
 
-    deleteAirline (Airline: Airline | number): Observable<Airline> {
+    deleteAirline(Airline: Airline | number): Observable<Airline> {
         const id = typeof Airline === 'number' ? Airline : Airline.id;
         const url = `${this.airlinesUrl}/${id}`;
         return this.http.delete<Airline>(url, httpOptions)

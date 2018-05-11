@@ -1,3 +1,14 @@
-<p>
-  airlines-crud works!
-</p>
+<div *ngIf="airline">
+  <h2>{{ airline.name | uppercase }} Details</h2>
+  <div><span>id: </span>{{ airline.id }}</div>
+  <div>
+    <label>Name:
+      <input [(ngModel)]="airline.name" placeholder="{{ airline.name }}"/>
+  </label><br />
+    <label>Country of Origin:
+      <input [(ngModel)]="airline.countryOfOrigin" placeholder="{{ airline.countryOfOrigin }}"/>
+  </label><br />
+  </div>
+</div>
+<button (click)="goBack()">go back</button>
+<button (click)="save()">save</button>

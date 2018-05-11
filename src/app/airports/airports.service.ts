@@ -37,8 +37,9 @@ export class AirportsService {
                         );
     }
 
-    updateAirport (Airport: Airport): Observable<any> {
-        return this.http.put(this.airportsUrl, Airport, httpOptions)
+    updateAirport (airport: Airport): Observable<any> {
+        const url = `${this.airportsUrl}/${airport.id}`;
+        return this.http.put(url, airport, httpOptions)
                         .pipe(
                             catchError(this.handleError<any>('updateAirport'))
                         );
